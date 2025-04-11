@@ -1,0 +1,2 @@
+# WorkshopAdmin
+WorkshopAdmin Bash scripts
