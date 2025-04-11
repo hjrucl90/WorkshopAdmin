@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## syntax: bash.sh [slug] [organisation]
+## syntax: bash.sh [slug] [organisation] [username] [password]
 ## [slug] in the format of YYYY-MM-DD-Org
 ## [organisation] is the GitHub organisation in which the repository is
 
@@ -8,7 +8,9 @@ if [[ -z "${1}" || -z "${2}" || -z "${3}" || -z "${4}" ]]
 then
   echo "Syntax: bash.sh [slug] [organisation]"
   echo "[slug] in the format of YYYY-MM-DD-Org"
-  echo " [organisation] is the GitHub organisation in which the repository is"
+  echo "[organisation] is the GitHub organisation in which the repository is"
+	echo "[username] is the username of the database"
+	echo "[password] is the password for the database"
 
 else
 
