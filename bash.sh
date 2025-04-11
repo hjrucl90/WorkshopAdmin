@@ -124,7 +124,7 @@ gh auth login
 echo Create website from template
 gh repo create ${ORGANISATION}/${SLUG} --template carpentries/workshop-template --public --description "${TITLE}" 
 echo Edit the URL for GitHub Pages
-gh repo edit ${ORGANISATION}/${SLUG} --homepage "git@github.com:${ORGANISATION}/${SLUG}.git"
+gh repo edit ${ORGANISATION}/${SLUG} --homepage "${ORGANISATION}.github.io/${SLUG}"
 echo Clone the repo
 gh repo clone git@github.com:${ORGANISATION}/${SLUG}.git ../${SLUG}
 echo Delete lines 38 to 58
