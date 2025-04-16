@@ -20,7 +20,7 @@ ORGANISATION=$2
 DB_CLIENT='mysql'
 DB_USER=${3}
 DB_PASSWD=${4}
-
+VENUE="Newcastle University"
 # sql:
 	SCRIPT1="select slug, w.title, humandate, humantime, startdate, enddate, r.description, r.longitude, r.latitude, language, country, online, pilot, inc_lesson_site, pre_survey, post_survey, carpentry_code, curriculum_code, flavour_id, eventbrite, inc_lesson_site, pre_survey, post_survey, r.what_three_words, schedule \
 	from workshops as w \
@@ -75,7 +75,7 @@ WHATTHREEWORDS=`echo "$RESULT1"|cut -f24`
 SCHEDULE=`echo "$RESULT1"|cut -f25`
 
 cat <<EOM >index.inc
-venue: "Newcastle University"
+venue: "${VENUE}, ${ADDRESS}"
 address: "${ADDRESS}"
 country: "${COUNTRY}"
 language: "${LANGUAGE}"
@@ -127,6 +127,10 @@ echo Edit the URL for GitHub Pages
 gh repo edit ${ORGANISATION}/${SLUG} --homepage "${ORGANISATION}.github.io/${SLUG}"
 echo Clone the repo
 gh repo clone git@github.com:${ORGANISATION}/${SLUG}.git ../${SLUG}
+echo Delete lines 213 to 263
+sed -i '213,263d' ../${SLUG}/index.md
+echo Insert requirements.inc after line 213 of index.md
+sed -i '213r requirements.inc' ../${SLUG}/index.md
 echo Delete lines 38 to 58
 sed -i '38,58d' ../${SLUG}/index.md
 echo Delete lines 6 to 21
