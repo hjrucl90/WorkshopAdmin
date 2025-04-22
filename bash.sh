@@ -138,7 +138,7 @@ sed -i '6,21d' ../${SLUG}/index.md
 echo Insert index.inc after line 6 of index.md
 sed -i '5r index.inc' ../${SLUG}/index.md
 echo Delete lines 8 to 72 in _config.yml
-sed -i '8,72d' ../${SLUG}/_config.yml
+sed -i '8,57d' ../${SLUG}/_config.yml
 echo Insert config.inc after line 8 of _config.yml
 sed -i '8r config.inc' ../${SLUG}/_config.yml
 echo Copy schedule
