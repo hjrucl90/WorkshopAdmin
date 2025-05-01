@@ -85,9 +85,9 @@ humandate: "${HUMANDATE}"
 humantime: "${HUMANTIME}"
 startdate: ${STARTDATE}
 enddate: ${ENDDATE}
-instructor: [`echo -e "$RESULT2"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"|sed -e "N;s/\n/, /g"|sed -e "s/^[ ]*//g"`]
-helper: [`echo -e "$RESULT3"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"|sed -e "N;s/\n/, /g"|sed -e "s/^[ ]*//g"`]
-email: [`echo -e "$RESULT4"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"|sed -e "N;s/\n/, /g"|sed -e "s/^[ ]*//g"`]
+instructor: [`echo -e "$RESULT2"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"|sed ':a;N;$!ba;s/\n/, /g'|sed -e "s/^[ ]*//g"`]
+helper: [`echo -e "$RESULT3"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"|sed ':a;N;$!ba;s/\n/, /g'|sed -e "s/^[ ]*//g"`]
+email: [`echo -e "$RESULT4"|sed "s/\t/ /g"|sed -e "s/^[ \t]*//g"|sed -e "s/^/\"/g"|sed -e "s/$/\"/g"||sed ':a;N;$!ba;s/\n/, /g'sed -e "s/^[ ]*//g"`]
 collaborative_notes: https://hackmd.io/@rseteam/${SLUG}
 eventbrite: ${EVENTBRITE}
 what3words: ${WHATTHREEWORDS}
