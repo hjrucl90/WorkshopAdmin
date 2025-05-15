@@ -1,0 +1,15 @@
+name: Create Carpentry Website
+description: Populate form to create a new carpentry website with the information provided
+title: "[website]: "
+body:
+  - type: markdown 
+    attributes: 
+      value: | 
+        Test putting some words here
+  - type: input
+    id: potato
+    attributes:
+      label: test info
+      description: test 
+    validations:
+      required: true 
