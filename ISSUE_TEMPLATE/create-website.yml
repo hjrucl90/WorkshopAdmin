@@ -1,6 +1,7 @@
 name: Create Carpentry Website
 description: Populate form to create a new carpentry website with the information provided
 title: "[website]: "
+projects: ["CarpentriesMagic/WorkshopAdmin"]
 body:
   - type: markdown 
     attributes: 
